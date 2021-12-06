@@ -13,4 +13,5 @@ yarl
 youtube-dl
 hachoir
 yt-dlp
+chatbase
 

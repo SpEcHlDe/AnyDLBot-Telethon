@@ -106,7 +106,7 @@ def echo(bot, update):
             # bot.send_message(chat_id=-1001364708459, text=logger, parse_mode="HTML")
             if "noyes.in" not in url:
                 try:
-                    command_to_exec = ["youtube-dl", "--no-warnings", "-j", url]
+                    command_to_exec = ["yt-dlp", "--no-warnings", "-j", url]
                     t_response = subprocess.check_output(command_to_exec, stderr=subprocess.STDOUT)
                     # https://github.com/rg3/youtube-dl/issues/2630#issuecomment-38635239
                 except subprocess.CalledProcessError as exc:
@@ -176,7 +176,7 @@ def button(bot, update):
     if ggyyy.status != "left":
     # if "1" != "2":
         youtube_dl_url = query.message.reply_to_message.text
-        command_to_exec = ["youtube-dl", "--no-warnings", "-j", youtube_dl_url]
+        command_to_exec = ["yt-dlp", "--no-warnings", "-j", youtube_dl_url]
         t_response = subprocess.check_output(command_to_exec)
         x_reponse = t_response.decode("UTF-8")
         response_json = json.loads(x_reponse)
@@ -207,7 +207,7 @@ def button(bot, update):
         if "mp3" in youtube_dl_ext:
             download_directory = Config.DOWNLOAD_LOCATION + "/" + str(output_file_name)[0:97] + "_" + youtube_dl_format + "." + youtube_dl_ext + ""
             command_to_exec = [
-                "youtube-dl",
+                "yt-dlp",
                 "--extract-audio",
                 "--audio-format", youtube_dl_ext,
                 "--audio-quality", youtube_dl_format,
@@ -218,7 +218,7 @@ def button(bot, update):
             download_directory = Config.DOWNLOAD_LOCATION + "/" + str(output_file_name)[0:97] + "_" + youtube_dl_format + "." + youtube_dl_ext + ""
             # command_to_exec = ["youtube-dl", "-f", youtube_dl_format, "--hls-prefer-ffmpeg", "--recode-video", "mp4", "-k", youtube_dl_url, "-o", download_directory]
             command_to_exec = [
-                "youtube-dl",
+                "yt-dlp",
                 "--embed-subs",
                 "-f", youtube_dl_format,
                 "--hls-prefer-ffmpeg", youtube_dl_url,

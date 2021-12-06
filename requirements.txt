@@ -5,7 +5,7 @@ idna
 idna-ssl
 multidict
 python-telegram-bot
-request
+requests
 rsa
 Telethon-sync
 urllib3

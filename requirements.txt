@@ -7,7 +7,7 @@ multidict
 python-telegram-bot
 requests
 rsa
-Telethon
+Telethon==0.19.1.6
 urllib3
 yarl
 youtube-dl
